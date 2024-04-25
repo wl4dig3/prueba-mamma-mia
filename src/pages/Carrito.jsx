@@ -6,4 +6,4 @@ function Carrito() {
   )
 }
 
-export default Carrito;
+export {Carrito};

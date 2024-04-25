@@ -11,4 +11,4 @@ function Pizza() {
   )
 }
 
-export default Pizza;
+export {Pizza};
