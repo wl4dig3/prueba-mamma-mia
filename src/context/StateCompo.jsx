@@ -5,7 +5,6 @@ import axios from 'axios';
 function StateCompo({children}) {
     const [counter, setCounter] = useState(0);
     const [pizzas, setPizzas] =useState([]);
-
     const increment = () => {
         setCounter(prev => prev + 1)
     };
@@ -18,10 +17,10 @@ function StateCompo({children}) {
     const getPizzas = () => {
         return axios.get(PIZZA_URL)
         .then( (resp)=> {setPizzas(resp.data)})
-    }
+    };
     useEffect( ()=> {
         getPizzas()
-    },[])
+    },[]);
   return (
     <counterContext.Provider value={{
         counter,
@@ -31,7 +30,7 @@ function StateCompo({children}) {
         getPizzas,
         pizzas,
         setPizzas,
-        PIZZA_URL
+        PIZZA_URL,
     }}>
         {children}
     </counterContext.Provider>

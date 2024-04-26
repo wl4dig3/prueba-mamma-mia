@@ -10,16 +10,12 @@ const {pizzas} = context;
 
 
   return (
-    <>
-      <h1>El home esta aqui</h1>
-      
-      
-    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: 'wrap'}}>
+
+    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: 'wrap', marginTop: '3rem'}}>
       {
-        pizzas.map( (pizza)=> <CardPizzas key={pizza.id} pizza={pizza} onPress={onPress} />)
+        pizzas.map( (pizza)=> <CardPizzas key={pizza.id} pizza={pizza} />)
       }
     </div>
-    </>
   )
 }
 

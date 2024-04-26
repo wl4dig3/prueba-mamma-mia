@@ -10,3 +10,35 @@
   width: 200px;
   height: 250px;
 }
+.lista {
+  list-style: none;
+  text-align: start;
+  margin-left: 2rem;
+}
+.card-price {
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+.linea {
+  border-bottom: 1px solid rgb(82, 80, 80);
+  height: 2px;
+  padding: 0;
+  margin: 20px auto 10px auto;
+}
+.container-card-detail {
+  width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.card-bodi {
+  width: 35%;
+  margin: 3rem auto;
+}
+.text-aligment {
+  text-align: start;
+  margin-left: 2rem;
+}
+.cards-style {
+  margin: 0.3rem
+}
