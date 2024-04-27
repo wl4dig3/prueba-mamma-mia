@@ -3,8 +3,28 @@ import { counterContext } from './Context';
 import axios from 'axios';
 
 function StateCompo({children}) {
+    const [cart, setCart] = useState([])
     const [counter, setCounter] = useState(0);
     const [pizzas, setPizzas] =useState([]);
+    const addToCart = pizza => {
+        const pizzaInCart = cart.findIndex(item => item.id=== pizza.id)
+
+        if (pizzaInCart >= 0) {
+            const newCart = structuredClone(cart)
+            newCart[pizzaInCart].quantity += 1
+            return setCart(newCart)
+        }
+        // pizza no esta en carrito
+        setCart(prevState => ([
+            ...prevState,
+            {
+                ...pizza,
+                quantity: 1
+            }
+        ]))
+    };
+
+    const clearCart = () => setCart([]);
     const increment = () => {
         setCounter(prev => prev + 1)
     };
@@ -31,6 +51,9 @@ function StateCompo({children}) {
         pizzas,
         setPizzas,
         PIZZA_URL,
+        cart,
+        addToCart,
+        clearCart
     }}>
         {children}
     </counterContext.Provider>

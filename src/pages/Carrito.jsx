@@ -1,8 +1,17 @@
-import React from 'react'
+import { useContext } from "react";
+import { counterContext } from "../context/Context";
+import { useParams } from "react-router-dom";
 
 function Carrito() {
+  const context = useContext(counterContext);
+const {...id} = useParams();
+  const { pizzas, increment, decremet } = context;
+  console.log(id);
+
   return (
-    <div className='mt-5'>El carrito</div>
+    <>
+    <h2>Detalle de tu pedido</h2>
+    </>
   )
 }
 

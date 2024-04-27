@@ -2,13 +2,17 @@ import { useContext } from "react";
 import { counterContext } from "../context/Context";
 import {Card, Button} from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function Pizza() {
   const context = useContext(counterContext);
-  const { pizzas, increment } = context;
+  const { pizzas } = context;
   const { id } = useParams();
-
   const filterP = pizzas.filter((item) => item.id === id);
+  const navigate = useNavigate();
+  const handleClick = () => {
+      navigate(`/carrito/`)
+  }
 
 
   return (
@@ -29,7 +33,7 @@ function Pizza() {
                 <li className="lista" key={id}>🍕 {ingred}</li>
               ))}
             </ul>
-            <Button onClick={increment} className="mx-3" variant="danger">
+            <Button onClick={handleClick} className="mx-3" variant="danger">
               Añadir
             </Button>
           </Card.Body>
