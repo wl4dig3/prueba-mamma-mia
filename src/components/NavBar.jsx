@@ -20,7 +20,7 @@ function NavBar() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
         <NavLink to="/carrito" className="text-black ms-3 text-decoration-none">
-        🚗 Carrito ${counter}
+        🚗 Cantidad ${counter}
         </NavLink>
         </Navbar.Collapse>
       </Container>

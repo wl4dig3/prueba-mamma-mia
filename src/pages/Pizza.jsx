@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 function Pizza() {
   const context = useContext(counterContext);
-  const { pizzas } = context;
+  const { pizzas, increment } = context;
   const { id } = useParams();
 
   const filterP = pizzas.filter((item) => item.id === id);
@@ -26,10 +26,10 @@ function Pizza() {
             <div className="linea"></div>
             <ul>
               {pizza.ingredients.map((ingred, id) => (
-                <li className="lista" key={id}>{ingred}</li>
+                <li className="lista" key={id}>🍕 {ingred}</li>
               ))}
             </ul>
-            <Button className="mx-3" variant="danger">
+            <Button onClick={increment} className="mx-3" variant="danger">
               Añadir
             </Button>
           </Card.Body>
